@@ -21,7 +21,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: Run a one-line script here
+        run: echo Run a one-line script here
 
       # Runs a set of commands using the runners shell
       
