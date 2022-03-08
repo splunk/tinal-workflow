@@ -4,14 +4,37 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  push:
-    branches:
-      - "main"
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
-  pull_request:
-    branches: 
-      - "**"
+  workflow_call:
+    inputs:
+      runs-on:
+        description: Platform to execute on
+        type: string
+        default: ubuntu-latest
+        
+      dotnet-version:
+        description: Version of dotnet to use
+        type: string
+        default: 5.0.x
+      
+      project-folder:
+        description: The folder containing the project to build
+        type: string
+        default: .
+        
+      run-tests:
+        description: Run tests
+        type: boolean
+        default: true
+      
+      publish-configuration:
+        description: Configuration to publish
+        type: string
+        default: Release
+        
+      artifact-name:
+        description: Name of the artifact to upload
+        type: string
+        default: drop
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
