@@ -52,8 +52,13 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: parttwo
+        timeout-minutes: 1
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo In Step 2, sleep 35 seconds. Timeout-minutes is 1
+          echo Step 2 starts.
+          sleep 35
+          echo Then sleep another 35 seconds in the same step. 
+          sleep 35
+          echo You should not see this line
+          echo Step 2 ends.
