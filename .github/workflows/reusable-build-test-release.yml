@@ -27,4 +27,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Demo
-          echo GDI
+          now=$(date +"%T")
+          echo "Current time : $now"
+
